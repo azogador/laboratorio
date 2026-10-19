@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1630">
+  <meta name="description" content="Laboratorio interactivo de Python para 7.º de UTU">
+  <title>Mi primer laboratorio de Python | 7.º UTU</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/material-darker.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/pyodide/v0.27.7/full/pyodide.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <a class="skip" href="#laboratorio">Ir al laboratorio</a>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-icon" aria-hidden="true">Py</div>
+      <div><strong>Mi primer laboratorio de Python</strong><span>7.º · UTU · Pensamiento computacional</span></div>
+    </div>
+    <div class="header-pill" id="python-status" role="status" aria-live="polite">⌛ Preparando Python…</div>
+  </header>
+
+  <main id="laboratorio" class="layout">
+    <section class="intro" aria-labelledby="intro-title">
+      <div class="intro-copy">
+        <span class="eyebrow">APRENDER · PROBAR · CORREGIR</span>
+        <h1 id="intro-title">Las ideas se convierten en instrucciones.</h1>
+        <p>Python es un lenguaje de programación. Acá vas a escribir instrucciones, ejecutarlas y comprobar qué hace una computadora con ellas.</p>
+      </div>
+      <div class="intro-figure" aria-hidden="true"><div class="python-graphic"><span class="snake snake-blue">●</span><span class="snake snake-yellow">●</span></div><span>print("¡Hola, mundo!")</span></div>
+    </section>
+
+    <section class="concept-strip" aria-label="Conceptos básicos">
+      <div><span class="step-number">01</span><strong>Escribís</strong><small>Una instrucción en Python</small></div>
+      <div><span class="step-number">02</span><strong>Ejecutás</strong><small>La computadora la interpreta</small></div>
+      <div><span class="step-number">03</span><strong>Revisás</strong><small>Aprendés del resultado</small></div>
+    </section>
+
+    <div class="workspace">
+      <section class="challenge panel" aria-labelledby="challenge-title">
+        <div class="panel-top"><span class="eyebrow">TU DESAFÍO</span><span id="challenge-counter" class="count">1 de 8</span></div>
+        <div class="progress-track" aria-label="Progreso"><div id="progress-fill" class="progress-fill"></div></div>
+        <h2 id="challenge-title"></h2>
+        <p id="challenge-context" class="context"></p>
+        <div class="theory"><strong>Una idea importante</strong><p id="challenge-theory"></p><code id="challenge-example"></code></div>
+        <div class="instruction"><strong>Tu misión</strong><p id="challenge-instruction"></p></div>
+        <details class="hint"><summary>Necesito una pista</summary><p id="challenge-hint"></p></details>
+        <div id="challenge-feedback" class="feedback" aria-live="polite" hidden></div>
+        <div class="challenge-footer"><button class="button subtle" id="previous-btn" type="button">← Anterior</button><button class="button primary" id="next-btn" type="button" disabled>Siguiente →</button></div>
+      </section>
+
+      <section class="editor-area" aria-label="Editor y consola de Python">
+        <div class="panel code-panel">
+          <div class="editor-heading"><div><span class="eyebrow">LABORATORIO</span><h2>Tu código</h2></div><span class="file-tag">programa.py</span></div>
+          <label for="code-input" class="sr-only">Escribí tu programa de Python</label>
+          <textarea id="code-input" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off"></textarea>
+          <div class="editor-footer"><span>Podés modificar y ejecutar todas las veces que quieras.</span><button id="reset-btn" class="button subtle" type="button">Restaurar ejemplo</button></div>
+        </div>
+        <div class="panel console-panel">
+          <div class="console-heading"><h2>Consola <span aria-hidden="true">›_</span></h2><span id="run-label">Lista para ejecutar</span></div>
+          <pre id="console-output" class="console-output" aria-live="polite">Tu programa mostrará aquí sus resultados.</pre>
+          <div class="console-actions"><button id="run-btn" class="button secondary" type="button" disabled>▶ Ejecutar código</button><button id="check-btn" class="button primary" type="button" disabled>Comprobar desafío</button></div>
+          <p id="timer-message" class="timer-note" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+    </div>
+
+    <footer class="footer"><p>Equivocarse también es programar: cambiá una instrucción y volvé a probar.</p><p>El código se ejecuta en este navegador; no se envía a una cuenta de estudiantes. Requiere conexión a Internet para cargar Python.</p></footer>
+  </main>
+</body>
+</html>
